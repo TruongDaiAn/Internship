@@ -1,0 +1,106 @@
+<div class="container-fluid min-vh-100 d-flex p-3 overflow-hidden">
+
+  <div class="col-md-7 d-none d-md-block p-0">
+    <div class="position-relative w-100 h-100 rounded-4 overflow-hidden">
+      <img src="assets/forest.jpg" class="w-100 h-100 object-fit-cover rounded-4" alt="Forest" loading="lazy" />
+      <div class="position-absolute bottom-0 start-50 translate-middle-x text-white text-center p-4">
+        <img src="assets/logo.png" class="mb-3" alt="Logo" style="width: 80px;" loading="lazy" />
+        <h2>E-ARCHIVE</h2>
+        <p>HỆ THỐNG KHO LƯU TRỮ TƯ LIỆU ĐIỆN TỬ TẬP TRUNG</p>
+        <p class="small">&copy; 2023 NLER. All rights reserved</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-5 d-flex align-items-center justify-content-center">
+    <div class="form-box">
+      <div class="registration-scroll">
+        <div class="registration-container">
+          <h1>Đăng ký tài khoản</h1>
+  
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-section">
+        <h2>Thông tin cá nhân</h2>
+      
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <label for="lastName">Họ đệm<span class="required">*</span></label>
+            <input type="text" id="lastName" formControlName="lastName" placeholder="Nhập họ đệm" class="form-control">
+          </div>
+          <div class="col-md-6 form-group">
+            <label for="firstName">Tên<span class="required">*</span></label>
+            <input type="text" id="firstName" formControlName="firstName" placeholder="Nhập tên" class="form-control">
+          </div>
+      
+          <div class="col-md-6 form-group">
+            <label for="birthDate">Ngày sinh<span class="required">*</span></label>
+            <input type="date" id="birthDate" formControlName="birthDate" class="form-control">
+          </div>
+          <div class="col-md-6 form-group">
+            <label for="gender">Giới tính</label>
+            <select id="gender" formControlName="gender" class="form-select">
+              <option value="male">Nam</option>
+              <option value="female">Nữ</option>
+            </select>
+          </div>
+      
+          <div class="col-md-6 form-group">
+            <label for="idNumber">Số CCCD</label>
+            <input type="text" id="idNumber" formControlName="idNumber" placeholder="Nhập số CCCD" class="form-control">
+          </div>
+          <div class="col-md-6 form-group">
+            <label for="nationality">Quốc tịch<span class="required">*</span></label>
+            <select id="nationality" formControlName="nationality" class="form-select">
+              <option value="Vietnam">Việt Nam</option>
+              <option value="Other">Khác</option>
+            </select>
+          </div>
+      
+          <div class="col-md-6 form-group">
+            <label for="email">Email<span class="required">*</span></label>
+            <input type="email" id="email" formControlName="email" placeholder="Nhập email" class="form-control">
+          </div>
+          <div class="col-md-6 form-group">
+            <label for="phone">Số điện thoại<span class="required">*</span></label>
+            <input type="tel" id="phone" formControlName="phone" placeholder="Nhập số điện thoại" class="form-control">
+          </div>
+      
+          <div class="col-12 form-group">
+            <label for="address">Địa chỉ</label>
+            <input type="text" id="address" formControlName="address" placeholder="Nhập địa chỉ" class="form-control">
+          </div>
+        </div>
+      </div>
+      
+  
+      <div class="divider"></div>
+  
+      <div class="form-section">
+        <h2>Thông tin tài khoản</h2>
+      
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <label for="username">Tên tài khoản<span class="required">*</span></label>
+            <input type="text" id="username" formControlName="username" placeholder="Nhập tên tài khoản" class="form-control">
+          </div>
+      
+          <div class="col-md-6 form-group">
+            <label for="userType">Loại người dùng<span class="required">*</span></label>
+            <select id="userType" formControlName="userType" class="form-select">
+              <option value="individual">Cá nhân</option>
+              <option value="business">Doanh nghiệp</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      
+  
+      <div class="form-footer">
+        <p>Bạn đã có tài khoản? <a routerLink="/Signin">Đăng nhập →</a></p>
+        <div class="button-group">
+          <button type="button" class="btn-back" (click)="goBack()">Quay lại</button>
+          <button type="submit" class="btn-submit" [disabled]="registerForm.invalid">Đăng ký</button>
+        </div>
+      </div>
+    </form>
+  </div>

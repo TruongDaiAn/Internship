@@ -1,0 +1,23 @@
+<div class="confirm-container">
+    <div class="confirm-box">
+      <div class="confirm-icon-wrapper">
+        <img src="/assets/email.png" alt="Đăng ký thành công" class="confirm-icon">
+      </div>
+
+      <h2 class="confirm-title">Đăng ký tài khoản thành công!</h2>
+
+    <p class="confirm-message">
+        Mật khẩu vừa được gửi vào email<br>
+        <span class="user-email" *ngIf="userEmail">{{ userEmail }}</span>
+        <span *ngIf="!userEmail">Địa chỉ email không được cung cấp.</span> <!-- Hoặc thông báo khác -->
+    </p>
+
+    <p class="confirm-instruction">
+      Vui lòng kiểm tra email để có thông tin đăng nhập
+    </p>
+
+    <a routerLink="/Signin" class="btn btn-success btn-login">
+        Đăng nhập
+    </a>
+  </div>
+</div>
